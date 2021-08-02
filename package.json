@@ -10,8 +10,23 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "17.0.1",
-    "react-native": "0.64.2"
+    "react-native": "0.64.2",
+    "react-native-animatable": "^1.2.4",
+    "react-native-background-job": "^2.1.1",
+    "react-native-background-timer": "^2.0.0",
+    "react-native-cli": "^2.0.1",
+    "react-native-keep-awake": "^3.0.1",
+    "react-native-keyboard-aware-scroll-view": "^0.9.4",
+    "react-native-keyboard-aware-scrollview": "^2.1.0",
+    "react-native-lyhud": "^1.0.8",
+    "react-native-navigation": "^7.18.1",
+    "react-native-push-notification": "^7.4.0",
+    "react-native-sms-android": "^0.4.1",
+    "react-native-storage": "^0.2.2",
+    "react-native-vector-icons": "^4.5.0",
+    "react-native-wakeful": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
