@@ -11,6 +11,7 @@ import {
     SectionList,
     Image,
     BackAndroid,
+    TouchableWithoutFeedbackBase,
 } from 'react-native';
 import { Navigation } from 'react-native-navigation'
 import {
@@ -27,7 +28,8 @@ import {
     from '../config/config'
 import timeFormat from '../utils/timeFormat'
 import SmsAndroid from 'react-native-sms-android'
-import Icon from 'react-native-vector-icons/Feather'
+// import Icon from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Ionicons'
 import Wakeful from 'react-native-wakeful';
 import KeepAwake from 'react-native-keep-awake';
 var PushNotification = require('react-native-push-notification');
@@ -78,35 +80,70 @@ function stopJob() {
 
 export default class Home extends Component {
 
-   
-                
-                // leftButtons:
-                //     {
-                //         id: 'LEFT',
-
-                //         icon: require('../../assets/images/a04.png'),
-                      
+    static options ()  {
+        return {
+        topBar: {
+            title: {
+                text: 'Home Screen',
+            },
+            rightButtons: [
+                {
+                    id: 'Setting',
+                    text:'Setting',
+                    color: 'white',
+                //     component: {
+                //   name: 'Setting',
+                    
                 //     },
-
-                
-    //         },
-        
-    // }
-
-
-    // static options = {
-    //     topBar: {
-    //         title: {
-    //             text: 'Home Screen',
-    //         },
-    //         rightButtons: [
-    //             {
-    //                 id: 'Setting',
-    //                 text: 'Settings'
-    //             }
-    //         ]
-    //     },
-    // };
+                  },
+            ]
+        },
+        bottomTabs: {
+            id: 'BOTTOM_TABS_LAYOUT',
+            children: [
+              {
+                stack: {
+                  id: 'HOME_TAB',
+                  children: [
+                    {
+                      component: {
+                        id: 'HOME_SCREEN',
+                        name: 'HomeScreen'
+                      }
+                    }
+                  ],
+                  options: {
+                    bottomTab: {
+                  icon: require('../../assets/images/a01.png'),
+                    text: '222'
+                    }
+                  }
+                }
+              },
+              {
+                stack: {
+                  id: 'PROFILE_TAB',
+                  children: [
+                    {
+                      component: {
+                        id: 'PROFILE_SCREEN',
+                        name: 'ProfileScreen'
+                      }
+                    }
+                  ],
+                  options: {
+                    bottomTab: {
+                        icon: require('../../assets/images/a01.png'),
+                    text: '111',
+                    textcolor: 'red'
+                    }
+                  }
+                }
+              }
+            ]
+          }
+    };
+}
     constructor(props) {
         console.log('Home constructor()');
         super(props);
@@ -125,8 +162,7 @@ export default class Home extends Component {
         Icon.getImageSource('settings', 20,)
             .then(source => {
 
-
-               
+        
                 // this.props.navigator.setButtons({
                 //     rightButtons: [
                 //         {
@@ -140,52 +176,59 @@ export default class Home extends Component {
             .catch(err => {
 
             });
-        Navigation.events().bindComponent(this);
+
+    Navigation.events().bindComponent(this);
+
+
         // this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
         let wakeful = new Wakeful();
         wakeful.acquire();
         viewObj = this;
         startJob();
+        }
 
-    }
-    // onNavigatorEvent(event) {
-    //     if (event.type === 'NavBarButtonPress') {
-    //         if (event.id === 'settings') {
-    //             this.props.navigator.push({
-    //                 screen:'Settings',
-    //                 title:'Settings',
-    //                 navigatorStyle:zipNavigatorStyle,
-    //                 animationType:'slide-horizontal',
-    //                 passProps:{
-    //                     onSave:this.restartTimer.bind(this),
-    //                     onStop:this.stopTimer.bind(this),
-    //                 },
-    //             })
-    //         }
-    //     }
-    // }
-    componentDidlMount() {
+        navigationButtonPressed({ buttonId }) {
+           if (buttonId = 'Setting') {
+        
+            
+                Navigation.push(this.props.componentId, {
+                    component: {
+                        name: 'Setting',
+                        passProps: {
+                            onSave: this.restartTimer.bind(this),
+                            onStop: this.stopTimer.bind(this),
+                        },
+                        options: {
+                            topBar: {
+                                title: {
+                                    text: 'Setting',
+                                    color: 'white'
+                                }
+    
+                            },
+                            bottomTab: {
+                                text: 'Home',
+                                color: 'red'
+                              }
+    
+                        }
+                    },
+       
+                });
+                     
+            }
+        }
+
+    
+  
+    componentWilllMount() {
         console.log('Home componentWillMount()');
         this.addLog(this.state.result, 'info');
         this.startTimer();
         BackgroundTimer.clearInterval(this.moniterTimer);
         this.moniterTimer = BackgroundTimer.setInterval(this.onMoniterTimer.bind(this), 1000 * 60 * 30);
         this.addLog('start monitor timer', 'info');
-        Navigation.mergeOptions(this.props.componentId, {
-            component: {
-                name: 'Setting',
-                options: {
-                    topBar: {
-                        rightButtons: [
-                            {
-                                id: 'settings',
-                                icon: source,
-                            }
-                        ]
-                    }
-                }
-            }
-        });
+    
         
     }
 
@@ -385,27 +428,8 @@ export default class Home extends Component {
                 <Image
                     source={require('../../assets/images/logo.png')}
                 />
-                <Button
-                    title='Settings'
-                    color='#710ce3'
-                    onPress={() => Navigation.push(this.props.componentId, {
-                        component: {
-                            name: 'Setting',
-                            passProps: {
-                                onSave: this.restartTimer.bind(this),
-                                onStop: this.stopTimer.bind(this),
-                            },
-                        },
-                        options: {
-                            topBar: {
-                                title: {
-                                    text: 'Setting'
-                                }
-
-                            }
-                        }
-                    })} />
-                <View style={styles.logcontainer}>
+        
+                        <View style={styles.logcontainer}>
                     <FlatList
                         data={this.state.logs}
                         renderItem={({ item }) => <Text style={{ color: this.getLogTextColor(item.type), marginLeft: 5, fontSize: 14, }}>{item.key}</Text>}
@@ -456,6 +480,26 @@ export default class Home extends Component {
     }
 
 }
+Navigation.setDefaultOptions({
+    statusBar: {
+      backgroundColor: '#4d089a'
+    },
+    topBar: {
+      title: {
+        color: 'white'
+      },
+      backButton: {
+        color: 'white'
+      },
+      background: {
+        color: '#4d089a'
+      }
+    },
+    bottomTab: {
+      fontSize: 14,
+      selectedFontSize: 14
+    }
+  });
 
 const styles = StyleSheet.create({
     container: {
@@ -481,7 +525,7 @@ const styles = StyleSheet.create({
         //height:40
     },
     logcontainer: {
-        height: ScreenSize.height - 250,
+        height: ScreenSize.height - 300,
         width: '90%',
         backgroundColor: 'black'
     },
