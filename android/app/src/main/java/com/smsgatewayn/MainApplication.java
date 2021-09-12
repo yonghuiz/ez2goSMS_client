@@ -1,4 +1,4 @@
-package com.smsgatewayn;
+package com.ez2goSMS_Client;
 
 import android.app.Application;
 import android.content.Context;
@@ -65,7 +65,7 @@ public class MainApplication extends NavigationApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.smsgatewayn.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.ez2goSMS_Client.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

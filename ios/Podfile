@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'smsgatewayN' do
+target 'ez2goSMS_Client' do
   config = use_native_modules!
 
   use_react_native!(
@@ -16,7 +16,7 @@ target 'smsgatewayN' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
-  target 'smsgatewayNTests' do
+  target 'ez2goSMS_ClientTests' do
     inherit! :complete
     # Pods for testing
   end

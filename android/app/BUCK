@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.smsgatewayn",
+    package = "com.ez2goSMS_Client",
 )
 
 android_resource(
     name = "res",
-    package = "com.smsgatewayn",
+    package = "com.ez2goSMS_Client",
     res = "src/main/res",
 )
 

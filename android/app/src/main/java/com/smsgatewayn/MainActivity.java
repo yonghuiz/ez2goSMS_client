@@ -1,4 +1,4 @@
-package com.smsgatewayn;
+package com.ez2goSMS_Client;
 
 import com.reactnativenavigation.NavigationActivity;
 

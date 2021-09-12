@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "smsgatewayN.app"
-               BlueprintName = "smsgatewayN"
-               ReferencedContainer = "container:smsgatewayN.xcodeproj">
+               BuildableName = "ez2goSMS_Client.app"
+               BlueprintName = "ez2goSMS_Client"
+               ReferencedContainer = "container:ez2goSMS_Client.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "smsgatewayNTests.xctest"
-               BlueprintName = "smsgatewayNTests"
-               ReferencedContainer = "container:smsgatewayN.xcodeproj">
+               BuildableName = "ez2goSMS_ClientTests.xctest"
+               BlueprintName = "ez2goSMS_ClientTests"
+               ReferencedContainer = "container:ez2goSMS_Client.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "smsgatewayN.app"
-            BlueprintName = "smsgatewayN"
-            ReferencedContainer = "container:smsgatewayN.xcodeproj">
+            BuildableName = "ez2goSMS_Client.app"
+            BlueprintName = "ez2goSMS_Client"
+            ReferencedContainer = "container:ez2goSMS_Client.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "smsgatewayN.app"
-            BlueprintName = "smsgatewayN"
-            ReferencedContainer = "container:smsgatewayN.xcodeproj">
+            BuildableName = "ez2goSMS_Client.app"
+            BlueprintName = "ez2goSMS_Client"
+            ReferencedContainer = "container:ez2goSMS_Client.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

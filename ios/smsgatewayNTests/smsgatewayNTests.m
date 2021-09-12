@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface smsgatewayNTests : XCTestCase
+@interface ez2goSMS_ClientTests : XCTestCase
 
 @end
 
-@implementation smsgatewayNTests
+@implementation ez2goSMS_ClientTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
