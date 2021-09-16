@@ -16,7 +16,7 @@
 //  import SplashScreen from 'react-native-splash-screen'
  
  import Hud from 'react-native-lyhud'
-//  import {LOGIN_LOGIN_URL} from '../config/API'
+  import {LOGIN_LOGIN_URL} from '../config/API'
  import {
      KeyboardAwareScrollView,
  } from 'react-native-keyboard-aware-scrollview'
@@ -193,63 +193,63 @@ import ZIPText from '../component/ZIPText'
              this.hud.show('Please wait');
          }
  
-        //  let param = new FormData();
-        //  param.append('phone', this.state.phoneNum.replace(/\s/g, ""));
-        //  param.append('psd',this.state.phonePsd);
-        //  netWork('POST', LOGIN_LOGIN_URL, param, false)
-        //      .then(json => {
-        //          this.setState({
-        //              hudType: 'success'
-        //          }, () => {
-        //              this.hud.show('success', 1500);
-        //          });
-        //          this.timeout = setTimeout(() => {
-        //              this.loginEnable = true;
-        //              userInfo.accessToken = json.data.accessToken;
-        //              userInfo.memberId = json.data.memberId;
+         let param = new FormData();
+         param.append('phone', this.state.phoneNum.replace(/\s/g, ""));
+         param.append('psd',this.state.phonePsd);
+         netWork('POST', LOGIN_LOGIN_URL, param, false)
+             .then(json => {
+                 this.setState({
+                     hudType: 'success'
+                 }, () => {
+                     this.hud.show('success', 1500);
+                 });
+                 this.timeout = setTimeout(() => {
+                     this.loginEnable = true;
+                     userInfo.accessToken = json.data.accessToken;
+                     userInfo.memberId = json.data.memberId;
                 
-        //                  storage.save({
-        //                      key: 'isLogin',
-        //                      data: true,
-        //                      expires: null,
-        //                  });
-        //                  storage.save({
-        //                      key: 'userInfo',
-        //                      data: {
-        //                          accessToken: userInfo.accessToken,
-        //                          memberId: userInfo.memberId,
-        //                          psd: userInfo.psd,
-        //                      },
-        //                      expires: null,
-        //                  });
+                         storage.save({
+                             key: 'isLogin',
+                             data: true,
+                             expires: null,
+                         });
+                         storage.save({
+                             key: 'userInfo',
+                             data: {
+                                 accessToken: userInfo.accessToken,
+                                 memberId: userInfo.memberId,
+                                 psd: userInfo.psd,
+                             },
+                             expires: null,
+                         });
  
-        //                  Navigation.setRoot({
-        //                      root: {
-        //                          stack: {
-        //                              id: 'Stack.Home2',
-        //                              children: [
-        //                                  {
-        //                                      component: {
-        //                                          id: 'Home',
-        //                                          name: 'Home',
-        //                                      },
-        //                                  },
-        //                              ],
-        //                          }
-        //                      }
-        //                  });
+                         Navigation.setRoot({
+                             root: {
+                                 stack: {
+                                     id: 'Stack.Home2',
+                                     children: [
+                                         {
+                                             component: {
+                                                 id: 'Home',
+                                                 name: 'Home',
+                                             },
+                                         },
+                                     ],
+                                 }
+                             }
+                         });
                    
                      
-        //          }, 1500);
-        //      })
-        //      .catch(err => {
-        //          this.loginEnable = true;
-        //          this.setState({
-        //              hudType: 'error'
-        //          }, () => {
-        //              this.hud.show(err, 2000);
-        //          });
-        //      })
+                 }, 1500);
+             })
+             .catch(err => {
+                 this.loginEnable = true;
+                 this.setState({
+                     hudType: 'error'
+                 }, () => {
+                     this.hud.show(err, 2000);
+                 });
+             })
      }
  
     

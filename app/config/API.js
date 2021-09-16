@@ -5,14 +5,14 @@
 //  export const BASE_URL = ROOT_URL+'app/';
 //LOGIN
 // export const LOGIN_REGISTER = "login/register";
-export const LOGIN_LOGIN_URL = BASE_URL+'login/login'
+export const LOGIN_LOGIN_URL = 'login/login'
 // export const LOGIN_FORGET_PSD = "login/forgetPsd";
 // export const LOGIN_RESET_PSD = "login/resetPsd";
 
 
 
 //check version
-export const GET_APP_VERSION = 'app/version';
+// export const GET_APP_VERSION = 'app/version';
 
 //PROFILE
 // export const UPDATE_PROFILE = "Address/insertAddress";
