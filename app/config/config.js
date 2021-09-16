@@ -1,13 +1,13 @@
-import { Dimensions} from 'react-native'
-import  AsyncStorage  from '@react-native-async-storage/async-storage'
-import Storage from 'react-native-storage'
-import './Colors'
+// import { Dimensions} from 'react-native'
+// import  AsyncStorage  from '@react-native-async-storage/async-storage'
+// import Storage from 'react-native-storage'
+// import './Colors'
 
-let storage = new Storage({
-    size: 1000,
-    storageBackend: AsyncStorage,
-    defaultExpires: null,
-});
+// let storage = new Storage({
+//     size: 1000,
+//     storageBackend: AsyncStorage,
+//     defaultExpires: null,
+// });
 
 let loadData=()=>{
     storage.load({key:'SyncTimeInterval'})
@@ -41,11 +41,11 @@ export function saveData(interval,smsLimit){
     storage.save({key:'SmsCountLimit',data:SMS_COUNT_LIMIT});  
 }
 
-export const ScreenSize = ({
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+// export const ScreenSize = ({
+//     width: Dimensions.get('window').width,
+//     height: Dimensions.get('window').height,
     
-});
+// });
 export const zipNavigatorStyle = {
     navBarBackgroundColor: 'green',
     navBarTextColor: 'white',

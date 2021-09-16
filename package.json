@@ -1,5 +1,5 @@
 {
-  "name": "ez2goSMS_Client",
+  "name": "ez2gosms_client",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.7",
-    "prop-types": "^15.6.0",
+    "@types/react": "^17.0.21",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-animatable": "^1.2.4",
@@ -19,8 +20,7 @@
     "react-native-background-timer": "^2.0.0",
     "react-native-cli": "^2.0.1",
     "react-native-keep-awake": "^3.0.1",
-    "react-native-keyboard-aware-scroll-view": "^0.9.4",
-    "react-native-keyboard-aware-scrollview": "^2.1.0",
+    "react-native-keyboard-aware-scrollview": "2.1.0",
     "react-native-lyhud": "^1.0.8",
     "react-native-navigation": "^7.18.1",
     "react-native-push-notification": "^7.4.0",

@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     Keyboard,
 } from 'react-native'
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import {
     SYNC_INTERVAL_SEC,
     saveData,
@@ -17,15 +17,32 @@ import CommonTextInput from '../component/CommonTextInput'
 // import Hud from 'react-native-lyhud'
 import { Navigation } from 'react-native-navigation'
 
-export default class Setting extends Component{
+export default class Setting extends Component {
+    static options() {
+        return {
+            topBar: {
+                title: {
+                    text: 'Setting Screen',
+                },
 
+            },
+            bottomTab: {
+                icon: require('../../assets/images/camera.png'),
+                text: 'Settings',
+                iconColor: 'red',
+                textColor: 'black'
+
+            }
+
+        }
+    };
     constructor(props) {
         super(props);
         this.state = {
-            interval: ''+SYNC_INTERVAL_SEC,
-            hudType:'none',
-            smsLimit: ''+SMS_COUNT_LIMIT,
-            stopCount:0,
+            interval: '' + SYNC_INTERVAL_SEC,
+            hudType: 'none',
+            smsLimit: '' + SMS_COUNT_LIMIT,
+            stopCount: 0,
         }
     }
     // showHud(type,msg,after=null){
@@ -38,12 +55,12 @@ export default class Setting extends Component{
     //     }
     // }
 
-    render(){     
+    render() {
         return (
-            <View style={{flex: 1, backgroundColor: 'white'}}>
-                <StatusBar barStyle="light-content" animated={true}/>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                <StatusBar barStyle="light-content" animated={true} />
                 <KeyboardAwareScrollView
-                    style={{flex: 1}}
+                    style={{ flex: 1 }}
                     contentContainerStyle={{
                         flexDirection: 'column',
                         padding: 8,
@@ -93,7 +110,7 @@ export default class Setting extends Component{
                         value={SMS_URLS[0].get}
                         disable={true}
                     />
-                    
+
                     <TouchableOpacity
                         style={{
                             height: 50,
@@ -106,20 +123,20 @@ export default class Setting extends Component{
                         activeOpacity={1}
                         onPress={() => {
                             let sec = Number(this.state.interval);
-                            console.log('sec:'+sec);
-                            if(Number.isNaN(sec)||sec<=0||sec>300){
+                            console.log('sec:' + sec);
+                            if (Number.isNaN(sec) || sec <= 0 || sec > 300) {
                                 alert('please input between 1 sec and 300 second');
                                 return;
                                 //this.showHud('error','please input between 1 sec and 300 second',2000);
                             }
-                            saveData(this.state.interval,this.state.smsLimit);
+                            saveData(this.state.interval, this.state.smsLimit);
                             this.props.onSave();
                             // this.props.navigator.pop();
                             Navigation.pop(this.props.componentId);
-                            
+
                         }}
                     >
-                        <ZIPText style={{color:'white',fontSize:16}}>
+                        <ZIPText style={{ color: 'white', fontSize: 16 }}>
                             Save
                         </ZIPText>
                     </TouchableOpacity>
@@ -135,19 +152,19 @@ export default class Setting extends Component{
                         }}
                         activeOpacity={1}
                         onPress={() => {
-                            
-                            if(this.state.stopCount==0){
-                                this.setState({stopCount:this.state.stopCount+1})
+
+                            if (this.state.stopCount == 0) {
+                                this.setState({ stopCount: this.state.stopCount + 1 })
                                 return;
                             }
                             this.props.onStop();
                             // this.props.navigator.pop();
                             Navigation.pop(this.props.componentId);
-                            
+
                         }}
                     >
-                        <ZIPText style={{color:'white',fontSize:16}}>
-                            {this.state.stopCount==0?'Stop Timer':'Confirm to Stop Timer'}
+                        <ZIPText style={{ color: 'white', fontSize: 16 }}>
+                            {this.state.stopCount == 0 ? 'Stop Timer' : 'Confirm to Stop Timer'}
                         </ZIPText>
                     </TouchableOpacity>
                 </KeyboardAwareScrollView>
