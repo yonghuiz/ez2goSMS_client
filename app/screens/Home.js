@@ -220,6 +220,25 @@ setStatusMsg() {
         result: runStatus + ', interal:' + SYNC_INTERVAL_SEC + ' seconds, limit:' + SMS_COUNT_LIMIT
     });
 }
+
+logout_home() {
+    logout();
+    Navigation.setRoot({
+        root: {
+          stack: {
+            id: 'Stack.Home',
+            children: [
+              {
+                component: {
+                  id: 'Login',
+                  name: 'Login',
+                },
+              },
+            ],
+          }
+        }
+      })
+}
 stopTimer() {
     console.log('Home stopTimer()');
     if (!this.isRunning) return;
@@ -424,6 +443,15 @@ render() {
                         />
                     </View>
                 }
+                 <View style={styles.button}>
+                    <Button
+                        color='green'
+                        title='logout'
+                        onPress={this.logout_home.bind(this)
+                            
+                            }
+                    />
+                </View>
             </View>
             <Text style={{ color: this.isRunning ? 'green' : 'red' }}>
                 {this.state.result}

@@ -28,7 +28,7 @@ export const LOGIN_LOGIN_URL = 'login/login'
 // //VCODE
 // export const CHECK_VCODE = "VCode/checkVCode";
 // export const GET_VCODE = "VCode/getVCode";
-// export const RE_LOGIN = "VCode/login";
+ export const RE_LOGIN = "VCode/login";
 
 // export function post_data(url,data){
 //     // console.log('post_data:',url,data);

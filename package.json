@@ -19,6 +19,7 @@
     "react-native-background-job": "^2.1.1",
     "react-native-background-timer": "^2.0.0",
     "react-native-cli": "^2.0.1",
+    "react-native-dropdown-picker": "^5.1.27",
     "react-native-keep-awake": "^3.0.1",
     "react-native-keyboard-aware-scrollview": "2.1.0",
     "react-native-lyhud": "^1.0.8",

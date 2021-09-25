@@ -28,9 +28,11 @@ loadData();
 export var SMS_URLS = [
     // {get:'http://api.zipcodexpress.com/zpi/MessageSms/getMessageList'
     // ,update:'http://api.zipcodexpress.com/zpi/MessageSms/updateMessage'},
-    {get:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/getMessageList'
-    ,update:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/updateMessage'},
-    {get:'http://sms.ez2gosms.us/app/Message/getMessageList'
+    // {get:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/getMessageList'
+    // ,update:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/updateMessage'},
+    {get:'http://sms.unibox.com.cn/app/Message/getMessageListN'
+    ,update:'http://sms.unibox.com.cn/app/Message/updateMessage'},
+    {get:'http://sms.ez2gosms.us/app/Message/getMessageListN'
     ,update:'http://sms.ez2gosms.us/app/Message/updateMessage'},
 ]
 export var SYNC_INTERVAL_SEC = 30;
@@ -64,4 +66,6 @@ export const UPDATE_MESSAGE = 'MessageSms/updateMessage'
 // export const UPDATE_MESSAGE = 'Message/updateMessage'
 //max sms number per request
 export var SMS_COUNT_LIMIT = 1;
+export const GET_APP_KEY_URL = 'login/getAppKeyInfo';
+export const UPDATE_APP_KEY_FLAG = 'login/updateAppkeyflag';
 

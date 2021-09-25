@@ -37,7 +37,7 @@ import ZIPText from '../component/ZIPText'
          // 初始状态
  
          this.state = {
-             useEmail: true,
+             useEmail: false,
  
              email: '',
              password: '',
@@ -207,7 +207,8 @@ import ZIPText from '../component/ZIPText'
                      this.loginEnable = true;
                      userInfo.accessToken = json.data.accessToken;
                      userInfo.memberId = json.data.memberId;
-                
+                     userInfo.psd = this.state.phonePsd;
+                     userInfo.phoneNum = this.state.phoneNum.replace(/\s/g, "");
                          storage.save({
                              key: 'isLogin',
                              data: true,
@@ -219,6 +220,8 @@ import ZIPText from '../component/ZIPText'
                                  accessToken: userInfo.accessToken,
                                  memberId: userInfo.memberId,
                                  psd: userInfo.psd,
+                                 phoneNum : userInfo.phoneNum,
+
                              },
                              expires: null,
                          });
@@ -369,7 +372,8 @@ import ZIPText from '../component/ZIPText'
                              onPress={() => {
                                  Keyboard.dismiss();
                                  this.setState({
-                                     useEmail: !this.state.useEmail,
+                                    //  useEmail: !this.state.useEmail,
+
                                      emailFocus: false,
                                      passwordFocus: false,
                                      phoneFocus: false,
@@ -383,22 +387,23 @@ import ZIPText from '../component/ZIPText'
                                  })
                              }}
                          >
-                             {this.state.useEmail ? 'Log in via mobile number' : 'Log in via Email'}
+                             {/* {this.state.useEmail ? 'Log in via mobile number' : 'Log in via Email'} */}
                          </ZIPText>
                          <ZIPText
                              onPress={() => {
-                                 Navigation.push(this.props.componentId, {
-                                     component: {
-                                         name: 'Login',
-                                         options: {
-                                             topBar: {
-                                                 title: {
-                                                     text: 'Sign Up',
-                                                 },
-                                             },
-                                         },
-                                     }
-                                 });
+                                //  Navigation.push(this.props.componentId, {
+                                //      component: {
+                                //          name: 'Login',
+                                //          options: {
+                                //              topBar: {
+                                //                  title: {
+                                //                      text: 'Sign Up',
+                                //                  },
+                                //              },
+                                //          },
+                                //      }
+                                //  });
+                                alert ("please go to www.ez2goSMS.us to sign up ");
                        
                              }}
                              style={{ fontSize: 16, color: Color.themeColor }}
