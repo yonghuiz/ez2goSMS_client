@@ -325,9 +325,9 @@ import ZIPText from '../component/ZIPText'
                                          let phone = text;
                                          if (text.length > this.state.phoneNum.length) {
                                              if (text.length === 3) {
-                                                 phone += ' ';
+                                                 phone += '';
                                              } else if (text.length === 7) {
-                                                 phone += ' ';
+                                                 phone += '';
                                              }
                                          } else {
                                              if (text.length === 9) {

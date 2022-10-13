@@ -30,10 +30,10 @@ export var SMS_URLS = [
     // ,update:'http://api.zipcodexpress.com/zpi/MessageSms/updateMessage'},
     // {get:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/getMessageList'
     // ,update:'http://zipcodexpress.unibox.com.cn/zpi/MessageSms/updateMessage'},
-    {get:'http://sms.unibox.com.cn/app/Message/getMessageListN'
-    ,update:'http://sms.unibox.com.cn/app/Message/updateMessage'},
-    {get:'http://sms.ez2gosms.us/app/Message/getMessageListN'
-    ,update:'http://sms.ez2gosms.us/app/Message/updateMessage'},
+    {get:'https://smss.unibox.com.cn/app/Message/getMessageListN'
+    ,update:'https://smss.unibox.com.cn/app/Message/updateMessage'},
+    {get:'https://smss.ez2gosms.us/app/Message/getMessageListN'
+    ,update:'https://smss.ez2gosms.us/app/Message/updateMessage'},
 ]
 export var SYNC_INTERVAL_SEC = 30;
 export function saveData(interval,smsLimit){

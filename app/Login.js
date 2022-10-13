@@ -196,6 +196,7 @@ import ZIPText from '../component/ZIPText'
          let param = new FormData();
          param.append('phone', this.state.phoneNum.replace(/\s/g, ""));
          param.append('psd',this.state.phonePsd);
+         console.log ("params:",param);
          netWork('POST', LOGIN_LOGIN_URL, param, false)
              .then(json => {
                  this.setState({
@@ -320,19 +321,19 @@ import ZIPText from '../component/ZIPText'
                                      value={this.state.phoneNum}
                                      onChangeText={(text) => {
                                          let phone = text;
-                                         if (text.length > this.state.phoneNum.length) {
-                                             if (text.length === 3) {
-                                                 phone += ' ';
-                                             } else if (text.length === 7) {
-                                                 phone += ' ';
-                                             }
-                                         } else {
-                                             if (text.length === 9) {
-                                                 phone = phone.substr(0, 8);
-                                             } else if (text.length === 4) {
-                                                 phone = phone.substr(0, 3);
-                                             }
-                                         }
+                                        //  if (text.length > this.state.phoneNum.length) {
+                                        //      if (text.length === 3) {
+                                        //          phone += '';
+                                        //      } else if (text.length === 7) {
+                                        //          phone += '';
+                                        //      }
+                                        //  } else {
+                                        //      if (text.length === 9) {
+                                        //          phone = phone.substr(0, 8);
+                                        //      } else if (text.length === 4) {
+                                        //          phone = phone.substr(0, 3);
+                                        //      }
+                                        //  }
                                          this.setState({
                                              phoneNum: phone,
                                          });

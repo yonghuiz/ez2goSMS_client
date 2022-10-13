@@ -1,8 +1,8 @@
 /**
  * Created by  Richard Zhu on 2021/09/10.
  */
-//  export const ROOT_URL = 'https://smss.ez2gosms.us/';
-//  export const BASE_URL = ROOT_URL+'app/';
+//    export const ROOT_URL = 'https://smss.ez2gosms.us/';
+//    export const BASE_URL = ROOT_URL+'app/';
 //LOGIN
 // export const LOGIN_REGISTER = "login/register";
 export const LOGIN_LOGIN_URL = 'login/login'

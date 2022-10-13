@@ -70,7 +70,8 @@ haveAlertLogin = false;
 global.haveAlertLogin = haveAlertLogin;
 
 // BASE_URL = "http://zipcodexpress.unibox.com.cn/zpi/";
-BASE_URL = "http://sms.ez2gosms.us/mapp/";
+// BASE_URL = "http://sms.ez2gosms.us/mapp/";
+BASE_URL = "https://smss.ez2gosms.us/app/";
 // BASE_URL ="http://sms.unibox.com.cn/app/"
  global.baseURL = BASE_URL;
 
@@ -177,7 +178,7 @@ reLogin = (method, url, param, needLogin, delay, option, resolve, reject) => {
     params.append('phone', userInfo.phoneNum);
     params.append('psd', userInfo.psd);
     fetch(
-        baseURL + LOGIN_LOGIN_URL,
+        baseURL + url,
         {
             ...option,
             method: 'POST',
