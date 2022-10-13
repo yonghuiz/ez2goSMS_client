@@ -12,7 +12,7 @@ import {
 } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {Navigation} from 'react-native-navigation'
- import {LOGIN_LOGIN_URL} from './API'
+//  import {LOGIN_LOGIN_URL} from './API'
 const {DeviceOperate} = NativeModules;
 
 
